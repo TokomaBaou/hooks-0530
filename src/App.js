@@ -1,10 +1,11 @@
 import "./styles.css";
+import { ToggleButton } from "./ToggleButton";
 
-export default function App() {
+export const App = () => {
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <ToggleButton />
     </div>
   );
-}
+};
