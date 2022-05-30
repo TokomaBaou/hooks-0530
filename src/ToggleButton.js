@@ -7,9 +7,20 @@ export const ToggleButton = () => {
     setOpen((prevState) => !prevState);
   };
 
+  const [changeTab, setChangeTab] = useState(true);
+
+  const countTab = () => {
+    setChangeTab(true);
+  };
+  const inputTab = () => {
+    setChangeTab(false);
+  };
   return (
     <>
-      <button></button>
+      <button onClick={toggle}>{open ? "OPEN" : "CLOSE"}</button>
+      <button onClick={countTab}>count</button>
+      <button onClick={inputTab}>input</button>
+      {changeTab === true ? <CountUp /> : <Input />}
     </>
   );
 };
