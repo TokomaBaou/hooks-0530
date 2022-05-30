@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { CountUp } from "./CountUp";
+import { Input } from "./Input";
 
 export const ToggleButton = () => {
   const [open, setOpen] = useState(false);
