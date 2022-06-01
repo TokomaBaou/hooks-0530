@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { CountUp } from "./CountUp";
 import { Input } from "./Input";
+import { Context } from "./Context";
 
 export const ToggleButton = () => {
   const [open, setOpen] = useState(false);
@@ -17,6 +18,10 @@ export const ToggleButton = () => {
   const inputTab = () => {
     setChangeTab(false);
   };
+
+  const contextValue = useContext(Context);
+  console.log(contextValue);
+
   return (
     <>
       <button onClick={toggle}>{open ? "OPEN" : "CLOSE"}</button>
