@@ -1,13 +1,16 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import { CountUp } from "./CountUp";
 import { Input } from "./Input";
 import { Context } from "./Context";
 
 export const ToggleButton = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
+
+  const { open, setOpen } = useContext(Context);
   const toggle = () => {
     /**現在の状態の反対処理 */
-    setOpen((prevState) => !prevState);
+    // setOpen((prevState) => !prevState);
+    setOpen((open) => !open);
   };
 
   const [changeTab, setChangeTab] = useState(true);
@@ -19,8 +22,14 @@ export const ToggleButton = () => {
     setChangeTab(false);
   };
 
-  const contextValue = useContext(Context);
-  console.log(contextValue);
+  // const init = useCallback(() => {
+  // }, []);
+  // const contextValue = useContext(Context);
+  // console.log(contextValue);
+
+  // useEffect(() => {
+  //   init();
+  // }, [init]);
 
   return (
     <>
